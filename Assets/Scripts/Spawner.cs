@@ -17,7 +17,6 @@ public class Spawner : MonoBehaviour
         StopCoroutine(SpawnWithDelay());
     }
 
-    // ReSharper disable Unity.PerformanceAnalysis
     private IEnumerator SpawnWithDelay()
     {
         WaitForSeconds delaySpawn = new WaitForSeconds(2f);
