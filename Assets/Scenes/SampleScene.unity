@@ -332,7 +332,7 @@ MonoBehaviour:
   - {fileID: 1390021594}
   - {fileID: 2084905195}
   - {fileID: 1901604075}
-  _fish: {fileID: 6025618788412259154, guid: 0f1f33f316f09494d9d52502bf038001, type: 3}
+  _fish: {fileID: 7855024828312550194, guid: 0f1f33f316f09494d9d52502bf038001, type: 3}
 --- !u!1 &765980421
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,47 +5,46 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Transform[] _targetPoints;
-    [SerializeField] private GameObject _fish;
+    [SerializeField] private Fish _fish;
+
+    private Coroutine _coroutineSpawnFish;
     
-    private void Start()
-    {
-        StartCoroutine(SpawnWithDelay());
-    }
+    private void Start() => _coroutineSpawnFish = StartCoroutine(SpawnFish());
 
     private void OnDisable()
     {
-        StopCoroutine(SpawnWithDelay());
+        if (_coroutineSpawnFish != null)
+        {
+            StopCoroutine(_coroutineSpawnFish);
+        }
     }
 
-    private IEnumerator SpawnWithDelay()
+    private IEnumerator SpawnFish()
     {
         WaitForSeconds delaySpawn = new WaitForSeconds(2f);
         
         while (true)
         {
-            GameObject fish = Instantiate(_fish, GetRandom(_spawnPoints), Quaternion.identity);
-
+            Fish fish = Instantiate(_fish, GetRandomPosition(_spawnPoints), Quaternion.identity);
             SetTarget(fish);
 
             yield return delaySpawn;
         }
     }
 
-    private void SetTarget(GameObject fish)
+    private void SetTarget(Fish fish)
     {
         if (fish.TryGetComponent(out Movement movementFish))
         {
-            movementFish.SetTarget(GetRandom(_targetPoints));
+            Vector3 point = GetRandomPosition(_targetPoints);
+            movementFish.SetTarget(point);
         }
     }
 
-    private Vector3 GetRandom(Transform[] points)
+    private static Vector3 GetRandomPosition(Transform[] points)
     {
-        int mixRange = 1;
-        int maxRange = 4;
-        int randomIndex = Random.Range(mixRange, maxRange);
-
-        Transform point = points[randomIndex - 1];
+        int randomIndex = Random.Range(0, points.Length);
+        Transform point = points[randomIndex];
         
         return point.transform.position;
     }
