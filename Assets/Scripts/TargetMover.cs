@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoPlaces : MonoBehaviour
+public class TargetMover : MonoBehaviour
 {
     [SerializeField] private Transform[] _allPoints;
     [SerializeField] private Transform _target;
@@ -17,7 +17,7 @@ public class GoPlaces : MonoBehaviour
 
         if (transform.position == target.position)
         {
-            NextPlaceTakerLogic();
+            SelectNextTarget();
         }
     }
     
@@ -34,12 +34,14 @@ public class GoPlaces : MonoBehaviour
         }
     }
     
-    private void NextPlaceTakerLogic()
+    private void SelectNextTarget()
     {
         _index++;
 
         if (_index == _allPoints.Length)
+        {
             _index = 0;
+        }
 
         Vector3 thisPointVector = _allPoints[_index].transform.position;
         transform.forward = thisPointVector - transform.position;
