@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 654819755}
   - component: {fileID: 654819756}
   m_Layer: 0
-  m_Name: 01_Spawner
+  m_Name: SpawnerFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 2024855596}
   _targetPoint: {fileID: 2084905195}
-  _enemyPrefab: {fileID: 6025618788412259154, guid: 0f1f33f316f09494d9d52502bf038001, type: 3}
+  _fishPrefab: {fileID: 7855024828312550194, guid: 0f1f33f316f09494d9d52502bf038001, type: 3}
 --- !u!1 &765980421
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,29 +335,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967036177}
-  - component: {fileID: 967036176}
+  - component: {fileID: 967036178}
   m_Layer: 0
-  m_Name: 03_Spawner
+  m_Name: SpawnerMedusa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &967036176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967036175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9069b3b9867e84476a67867bd89160fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnPoint: {fileID: 497594151}
-  _targetPoint: {fileID: 1390021594}
-  _enemyPrefab: {fileID: 789814379104399200, guid: 4d090df5107264936a2efb555cae225b, type: 3}
 --- !u!4 &967036177
 Transform:
   m_ObjectHideFlags: 0
@@ -375,6 +360,21 @@ Transform:
   - {fileID: 1390021594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967036178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967036175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f49de5ad85640c291a9b74e1bad784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 497594151}
+  _targetPoint: {fileID: 1390021594}
+  _medusaPrefab: {fileID: -3428622862231632487, guid: 4d090df5107264936a2efb555cae225b, type: 3}
 --- !u!1 &1369917338
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,29 +384,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1369917340}
-  - component: {fileID: 1369917339}
+  - component: {fileID: 1369917341}
   m_Layer: 0
-  m_Name: 02_Spawner
+  m_Name: SpawnerHippocampus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1369917339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369917338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9069b3b9867e84476a67867bd89160fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnPoint: {fileID: 765980422}
-  _targetPoint: {fileID: 1901604075}
-  _enemyPrefab: {fileID: 6517549223933661232, guid: a93a02b6a5b1d49dc8059435db6ab2ef, type: 3}
 --- !u!4 &1369917340
 Transform:
   m_ObjectHideFlags: 0
@@ -424,6 +409,21 @@ Transform:
   - {fileID: 1901604075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369917341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369917338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dec9886bf3e44ca3bb291ca024ea74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 765980422}
+  _targetPoint: {fileID: 1901604075}
+  _hippocampusPrefab: {fileID: 1360423918034785901, guid: a93a02b6a5b1d49dc8059435db6ab2ef, type: 3}
 --- !u!1 &1390021593
 GameObject:
   m_ObjectHideFlags: 0
