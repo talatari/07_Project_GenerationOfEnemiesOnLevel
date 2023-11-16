@@ -10,9 +10,14 @@ public class InstantiateBulletsShooting : MonoBehaviour
 
     private Coroutine _coroutineShooting;
     
-    private void Start() => _coroutineShooting = StartCoroutine(ShootingWorker());
+    private void OnEnable() => 
+        _coroutineShooting = StartCoroutine(ShootingWorker());
 
-    private void OnDisable() => StopCoroutine(_coroutineShooting);
+    private void OnDisable()
+    {
+        if (_coroutineShooting is not null)
+            StopCoroutine(_coroutineShooting);
+    }
 
     private IEnumerator ShootingWorker()
     {
@@ -30,4 +35,6 @@ public class InstantiateBulletsShooting : MonoBehaviour
             yield return new WaitForSeconds(timeWaitShooting);
         }
     }
+    
+    
 }

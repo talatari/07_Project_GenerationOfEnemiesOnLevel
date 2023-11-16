@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Medusa : MonoBehaviour
 {
     [SerializeField, Range(1, 50)] private int _timeLife = 7;
     
