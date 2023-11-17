@@ -2,11 +2,11 @@ using System.Collections;
 using UnityEngine;
 using Random = System.Random;
 
-public class SpawnerHippocampus : MonoBehaviour
+public class SpawnerEnemy : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Transform _targetPoint;
-    [SerializeField] private Hippocampus _hippocampusPrefab;
+    [SerializeField] private Enemy _enemyPrefab;
 
     private float _randomDelay;
     private Coroutine _coroutineSpawnEnemy;
@@ -37,9 +37,9 @@ public class SpawnerHippocampus : MonoBehaviour
         
         while (true)
         {
-            Hippocampus hippocampus = Instantiate(_hippocampusPrefab, _spawnPoint.position, Quaternion.identity);
+            Enemy enemy = Instantiate(_enemyPrefab, _spawnPoint.position, Quaternion.identity);
             
-            if (hippocampus.TryGetComponent(out MovementEnemy movementEnemy))
+            if (enemy.TryGetComponent(out MovementEnemy movementEnemy))
                 movementEnemy.SetTarget(_targetPoint.position);
 
             yield return delaySpawn;
