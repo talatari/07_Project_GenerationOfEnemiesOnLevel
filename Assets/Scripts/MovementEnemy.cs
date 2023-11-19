@@ -11,6 +11,4 @@ public class MovementEnemy : MonoBehaviour
     
     public void SetTarget(Vector3 target) => 
         _target = target;
-
-    
 }
