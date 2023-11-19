@@ -45,6 +45,4 @@ public class SpawnerEnemy : MonoBehaviour
             yield return delaySpawn;
         }
     }
-    
-    
 }

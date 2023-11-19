@@ -38,6 +38,4 @@ public class TargetMover : MonoBehaviour
         Vector3 thisPointVector = _allPoints[_index].transform.position;
         transform.forward = thisPointVector - transform.position;
     }
-    
-    
 }
